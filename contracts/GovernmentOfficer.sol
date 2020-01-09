@@ -56,12 +56,12 @@ contract GovernmentOfficer {
         return false;
     }
 
-    function addToMyContracts(address contractAddress) public view returns (address) {
+    function addToMyContracts(address contractAddress) public returns (address) {
         //call when createContract button is clicked => web3
         contracts.push(contractAddress);
     }
 
-    function addToMyTenders(address tenderAddress) public view returns (address) {
+    function addToMyTenders(address tenderAddress) public returns (address) {
         //look at web3 for address 
         tenders.push(tenderAddress);
     }

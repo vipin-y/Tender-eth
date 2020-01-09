@@ -36,7 +36,7 @@ contract FactoryContract {
         _amountForEachTask, 
         _reviewtime);
 
-        allContracts.push(newContract);
-        return newContract;
+        allContracts.push(address(newContract));
+        return address(newContract);
     }
 }

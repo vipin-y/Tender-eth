@@ -15,8 +15,8 @@ contract FactoryGovernmentOfficer {
         GovernmentOfficer newOfficer = new GovernmentOfficer();
         newOfficer.setGovernmentOfficer(_walletAddress, _email, _name, 
         _phoneNumber, _employeeId);
-        allOfficers.push(newOfficer);
-        return newOfficer;
+        allOfficers.push(address(newOfficer));
+        return address(newOfficer);
     }
 
     // function returnString() public returns (string) {

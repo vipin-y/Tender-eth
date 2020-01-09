@@ -112,9 +112,11 @@ contract Tender {
             finalTenderAmount = amount;
     }
 
+    string[][] public tempDocuments ;
+
     function getProposalsToVerify(uint index) public returns (string[] memory, string[][] memory, address) {
         //loop at web3
-        string[][] memory tempDocuments;
+        // string[][] storage tempDocuments ;
 
         address tempAddresses;
         if (allContractorProposals[index].status == ProposalStatus.unverified) {
@@ -139,17 +141,19 @@ contract Tender {
         allContractorProposals[index].quotationAmount, allContractorProposals[index].status);
     }
 
+    string[][] public tempDocuments1 ;
+
     function getVerifiedProposals(uint index) public returns (string[] memory, string[][] memory, address, uint[] memory) {
         //loop at web3
-        string[][] memory  tempDocuments;
+        // string[][] storage  tempDocuments ;
         address tempAddresses;
         uint[] memory tempAmount;
         if (allContractorProposals[index].status == ProposalStatus.verified) {
-            tempDocuments.push(allContractorProposals[index].constraintDocuments);
+            tempDocuments1.push(allContractorProposals[index].constraintDocuments);
             tempAddresses = allContractorProposals[index].contractorAddress;
             tempAmount = allContractorProposals[index].quotationAmount;
         }
-        return (constraints, tempDocuments, tempAddresses, tempAmount);
+        return (constraints, tempDocuments1, tempAddresses, tempAmount);
     }
     
 }

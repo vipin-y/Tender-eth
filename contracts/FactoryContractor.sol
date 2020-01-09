@@ -15,7 +15,7 @@ contract FactoryContractor {
         Contractor contractor = new Contractor();
         contractor.setContractor(_walletAddress, _email, _name,
         _phoneNumber, _panNumber, _gstNumber);
-        allContractors.push(contractor);
-        return contractor;
+        allContractors.push(address(contractor));
+        return address(contractor);
     }
 }

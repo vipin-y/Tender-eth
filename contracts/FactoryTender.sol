@@ -17,13 +17,13 @@ contract FactoryTender {
     string[] memory taskName, uint[] memory taskDays, 
     string[] memory constraints) public returns (address) {
         Tender newTender = new Tender();
-        newTender.setTenderBasic(this, tenderName, tenderId, 
+        newTender.setTenderBasic(address(this), tenderName, tenderId, 
         //organisationChain, tenderRefNum,
         bidSubmissionClosingDate, bidOpeningDate, covers);
         newTender.setTenderAdvanced(clauses,
         taskName, taskDays, 
         constraints);
-        allTenders.push(newTender);
-        return newTender;
+        allTenders.push(address(newTender));
+        return address(newTender);
     }
 }
